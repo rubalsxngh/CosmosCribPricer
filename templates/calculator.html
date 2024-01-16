@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏡 House Price Mystifier 🚀</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff4500;
+        }
+
+        .fortune-teller {
+            font-size: 24px;
+            color: #4caf50;
+        }
+
+        .submit-btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        form {
+            margin-top: 20px; /* Add space above the form */
+        }
+        
+        label, input {
+            margin-bottom: 10px; /* Add space between labels and inputs */
+        }
+        
+        /* Additional styles for better spacing */
+        label {
+            display: block; /* Make labels block-level for better alignment */
+            margin-bottom: 5px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+<body>
+
+<h1>🔮 Welcome to the House Price Mystifier 🔮</h1>
+<p class="fortune-teller">Enter the mystical details, and let the magic predict your house price!</p>
+
+<form method="post" action="{% url 'Calc' %}" autocomplete="off">
+    {% csrf_token %}
+    <label for="total_sqft">Total Square Feet 🔢</label>
+    <input type="text" id="total_sqft" name="total_sqft" required><br>
+
+    <label for="bath">Bathrooms 🛁</label>
+    <input type="text" id="bath" name="bath" required><br>
+
+    <label for="balcony">Balconies 🌳</label>
+    <input type="text" id="balcony" name="balcony" required><br>
+
+    <label for="bhk">Bedrooms 🛏️</label>
+    <input type="text" id="bhk" name="bhk" required><br>
+
+    <label for="area_type_le">Area Type 🗺️</label>
+    <input type="text" id="area_type_le" name="area_type_le" required><br>
+
+    <label for="location_le">Location 📍</label>
+    <input type="text" id="location_le" name="location_le" required><br>
+
+    <button type="submit" class="submit-btn">Unveil the Prediction ✨</button>
+</form>
+
+{% if result %}
+<div class="result">🌟 Behold the Mystical Prediction: Rs. {{ result|stringformat:".2f" }} only/- 🌟</div>
+{% endif %}
+
+
+</body>
+</html>
