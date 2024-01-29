@@ -30,7 +30,7 @@ def calculator(requests):
         if attributes['total_sqft'] is None:
             return render(requests, 'calculator.html', result)
         
-        file_path = 'model\hechPredictor_model'
+        file_path = 'model\regression_model'
         print(f"Attempting to open file at: {file_path}")
 
         with open(file_path, 'rb') as model:
