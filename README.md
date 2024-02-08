@@ -1,4 +1,4 @@
-# 🏡 CosmosCribPricer 🚀
+# CosmosCribPricer
 
 Welcome to the CosmosCribPricer – an enchanting tool to predict house prices with a touch of machine learning magic! 🔮
 
